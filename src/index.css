@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: ShinShin;
+  font-size: 1.3em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.imageBox {
+  display: flex;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  padding-bottom: 10px;
+}
+.displayCard {
+  position: relative;
+  left: 10%;
+  display: flex;
+  background: url('https://enka.network/ui/UI_NameCardPic_0_P.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 1206px;
+}
+
