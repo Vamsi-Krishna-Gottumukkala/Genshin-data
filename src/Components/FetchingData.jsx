@@ -11,21 +11,24 @@ function FetchingData() {
   const [data, setData] = useState();
 
   const fetchDataFromAPI = () => {
-    fetch(`https://enka.network/api/uid/${uid}`)
-      .then((response) => {
-        if (!response) throw new Error("Fetching failed");
-        response.json();
-      })
-      .then((jsonifiedData) => setData(jsonifiedData));
-     
-  };
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const apiUrl = `https://enka.network/api/uid/${uid}`;
+    fetch(proxyUrl + apiUrl)
+    .then((data) => {
+        if (!data.ok) throw new Error('Failed to fetch');
+        return data.json();
+    })
+    .then((formattedData) => setData(formattedData))
+    .catch((error) => console.error(error));
+};
   useEffect(fetchDataFromAPI, []);
-  console.log(data);
+  
+  if(!data) return(<><h1>Loading</h1></>)
 
   return (
     <>
       <Navbar uid={uid} onChangingId={onChangingId} />
-      <CharacterList />
+      <CharacterList data={data.avatarInfoList}/>
       <DisplayCard />
     </>
   );

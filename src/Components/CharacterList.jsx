@@ -1,7 +1,8 @@
 import React from 'react'
 import Button from './Button'
 
-function CharacterList() {
+function CharacterList(props) {
+  console.log(props.data);
   return (
     <div style={{display:"flex",justifyContent:"center",gap:'10px'
     }}>
