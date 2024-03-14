@@ -5,15 +5,16 @@ import SplashArt from './SplashArt'
 import CharacterStats from './CharacterStats'
 
 
-function DisplayCard() {
+function DisplayCard(props) {
+  const {data,avatars,index} = props;
   return (
     <div className='displayCard'>
-        <SplashArt/>
+        <SplashArt data={data}/>
         <div>
         <Weapon/>
         <CharacterStats/>
         </div>
-        <ArtifactList/>
+        <ArtifactList data={avatars} index={index}/>
     </div>
   )
 }

@@ -8,6 +8,7 @@ function FetchingData() {
   const onChangingId = (e) => {
     setUid(e.target.value);
   };
+  const [index, setIndex] = useState(1);
   const [data, setData] = useState();
 
   const fetchDataFromAPI = () => {
@@ -24,12 +25,12 @@ function FetchingData() {
   useEffect(fetchDataFromAPI, []);
   
   if(!data) return(<><h1>Loading</h1></>)
-  console.log(data.playerInfo);
+  console.log(data);
   return (
     <>
       <Navbar uid={uid} onChangingId={onChangingId} data={data.playerInfo}/>
       <CharacterList data={data.avatarInfoList}/>
-      <DisplayCard />
+      <DisplayCard data={data.playerInfo} avatars = {data.avatarInfoList} index={index}/>
     </>
   );
 }

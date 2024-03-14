@@ -1,10 +1,11 @@
 import React from "react";
 
-function Artifact() {
+function Artifact(props) {
+  const image = props.imgPath;
   return (
     <div style={{ display: "flex"}}>
       <img
-        src="https://enka.network/ui/UI_RelicIcon_15006_4.png"
+        src={`https://enka.network/ui/${image}.png`}
         alt="artifact"
         width="100%"
         height="80px"
