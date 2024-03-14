@@ -24,10 +24,10 @@ function FetchingData() {
   useEffect(fetchDataFromAPI, []);
   
   if(!data) return(<><h1>Loading</h1></>)
-
+  console.log(data.playerInfo);
   return (
     <>
-      <Navbar uid={uid} onChangingId={onChangingId} />
+      <Navbar uid={uid} onChangingId={onChangingId} data={data.playerInfo}/>
       <CharacterList data={data.avatarInfoList}/>
       <DisplayCard />
     </>
