@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react";
-import profilePicture from '../data/splashArtAlternative.json'
+import React from "react";
+import useProfilePictures from "../Hooks/useProfilePictures";
 
 function Navbar(props) {
   const data = props.data;
-  const [profilePic, setProfilePic] = useState();
-  useEffect(()=>setProfilePic(profilePicture), [])
-  if(!profilePic) return <h1>Loading</h1>
-  const pictureIndex = data.profilePicture.id.toString();
-  console.log(profilePic);
-
+  const [img] = useProfilePictures({data});
+  // console.log(img);
   return (
     <div className="nav">
       <div className="imageBox">
-        <div><img src={`https://enka.network/ui/${profilePic[pictureIndex].iconPath}.png`} alt='pp' width='100px' height='100px'></img></div>
+        <div><img src={img} alt='pp' width='100px' height='100px'></img></div>
         <div>
           {data.nickname}<br></br>
           AR {data.level}<br></br>
@@ -22,8 +18,8 @@ function Navbar(props) {
         </div>
       </div>
       <div>
-        <h3>Total Achievements : 123</h3>
-        <h3>Spiral Abyss : 12-3</h3>
+        <h3>Total Achievements : {data.finishAchievementNum}</h3>
+        <h3>Spiral Abyss : {data.towerFloorIndex}-{data.towerLevelIndex}</h3>
       </div>
       <div
         style={{
