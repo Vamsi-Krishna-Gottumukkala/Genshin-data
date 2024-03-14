@@ -11,7 +11,7 @@ function DisplayCard(props) {
     <div className='displayCard'>
         <SplashArt data={data} index={index}/>
         <div>
-        <Weapon/>
+        <Weapon data={avatars} index={index}/>
         <CharacterStats index={index}/>
         </div>
         <ArtifactList data={avatars} index={index} />
