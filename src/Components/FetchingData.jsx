@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import CharacterList from "./CharacterList";
 import DisplayCard from "./DisplayCard";
+import useIndex from "../Hooks/useIndex";
 
 function FetchingData() {
   const [uid, setUid] = useState("814201215");
   const onChangingId = (e) => {
     setUid(e.target.value);
   };
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useIndex();
   const [data, setData] = useState();
 
   const fetchDataFromAPI = () => {
@@ -29,7 +30,7 @@ function FetchingData() {
   return (
     <>
       <Navbar uid={uid} onChangingId={onChangingId} data={data.playerInfo}/>
-      <CharacterList data={data.avatarInfoList}/>
+      <CharacterList data={data.avatarInfoList} index={index} setIndex={setIndex}/>
       <DisplayCard data={data.playerInfo} avatars = {data.avatarInfoList} index={index}/>
     </>
   );

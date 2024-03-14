@@ -9,12 +9,12 @@ function DisplayCard(props) {
   const {data,avatars,index} = props;
   return (
     <div className='displayCard'>
-        <SplashArt data={data}/>
+        <SplashArt data={data} index={index}/>
         <div>
         <Weapon/>
-        <CharacterStats/>
+        <CharacterStats index={index}/>
         </div>
-        <ArtifactList data={avatars} index={index}/>
+        <ArtifactList data={avatars} index={index} />
     </div>
   )
 }
