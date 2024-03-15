@@ -22,12 +22,10 @@ code {
 }
 .displayCard {
   position: relative;
-  left: 10%;
+  left: 2%;
   display: flex;
-  background: url('https://enka.network/ui/UI_NameCardPic_0_P.png');
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 400px;
-  width: 1206px;
+  color: white;
+  width: 1500px;
 }
 

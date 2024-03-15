@@ -1,16 +1,18 @@
 import React from "react";
+import ArtifactStats from "./ArtifactStats";
 
 function Artifact(props) {
   const image = props.imgPath;
+  const data = props.data;
   return (
-    <div style={{ display: "flex"}}>
+    <div style={{ display: "flex" }}>
       <img
         src={`https://enka.network/ui/${image}.png`}
         alt="artifact"
-        width="100%"
+        width="120px"
         height="80px"
       />
-      <div>Stats</div>
+      <ArtifactStats data={data} />
     </div>
   );
 }
