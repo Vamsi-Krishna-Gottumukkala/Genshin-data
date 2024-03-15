@@ -8,7 +8,6 @@ function Weapon(props) {
   const [stat, setStat] = useState(stats);
   useEffect(() => setStat(stat), [stat]);
   const { data, index } = props;
-  console.log(data[index].equipList[5].flat.weaponStats[0]);
   const baseStat =
     stats[data[index].equipList[5].flat.weaponStats[0].appendPropId];
   const specialStat =

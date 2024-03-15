@@ -31,7 +31,6 @@ function FetchingData() {
         <h1>Loading</h1>
       </>
     );
-  console.log(data);
   return (
     <>
       <Navbar uid={uid} onChangingId={onChangingId} data={data.playerInfo} />

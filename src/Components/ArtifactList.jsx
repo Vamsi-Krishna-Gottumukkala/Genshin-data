@@ -2,7 +2,6 @@ import React from "react";
 import Artifact from "./Artifact";
 
 function ArtifactList(props) {
-  console.log(props.data[props.index].equipList[0]);
   return (
     <div
       style={{
