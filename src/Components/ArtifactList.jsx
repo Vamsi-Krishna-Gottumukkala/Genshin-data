@@ -2,6 +2,11 @@ import React from "react";
 import Artifact from "./Artifact";
 
 function ArtifactList(props) {
+  const artifactData = props.data[props.index].equipList.map((val, index) => {
+    if(index === 5) return null
+    return <Artifact imgPath = {val.flat.icon} data = {val.flat} key={val.itemId}/>
+  })
+  console.log(props.data[props.index].equipList);
   return (
     <div
       style={{
@@ -11,26 +16,7 @@ function ArtifactList(props) {
         width: "600px",
       }}
     >
-      <Artifact
-        imgPath={props.data[props.index].equipList[0].flat.icon}
-        data={props.data[props.index].equipList[0].flat}
-      />
-      <Artifact
-        imgPath={props.data[props.index].equipList[1].flat.icon}
-        data={props.data[props.index].equipList[1].flat}
-      />
-      <Artifact
-        imgPath={props.data[props.index].equipList[2].flat.icon}
-        data={props.data[props.index].equipList[2].flat}
-      />
-      <Artifact
-        imgPath={props.data[props.index].equipList[3].flat.icon}
-        data={props.data[props.index].equipList[3].flat}
-      />
-      <Artifact
-        imgPath={props.data[props.index].equipList[4].flat.icon}
-        data={props.data[props.index].equipList[4].flat}
-      />
+      {artifactData}
     </div>
   );
 }

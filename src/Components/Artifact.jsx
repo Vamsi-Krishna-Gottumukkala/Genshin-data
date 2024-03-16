@@ -9,7 +9,7 @@ function Artifact(props) {
       <img
         src={`https://enka.network/ui/${image}.png`}
         alt="artifact"
-        width="120px"
+        width="80px"
         height="80px"
       />
       <ArtifactStats data={data} />

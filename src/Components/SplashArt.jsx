@@ -8,7 +8,6 @@ function SplashArt(props) {
   const requireSquare = true;
   const requiredImage = relation[data.showAvatarInfoList[index].avatarId];
   const [img] = useProfilePictures({ data, requireSquare, requiredImage });
-  console.log(relation[data.showAvatarInfoList[index].avatarId]);
   return (
     <div
       style={{
