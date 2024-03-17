@@ -4,7 +4,6 @@ import useProfilePictures from "../Hooks/useProfilePictures";
 function Navbar(props) {
   const data = props.data;
   const [img] = useProfilePictures({ data });
-  // console.log(img);
   return (
     <div className="nav">
       <div className="imageBox">
