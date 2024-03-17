@@ -2,9 +2,8 @@ import React from "react";
 import stats from "../data/stats.json";
 import DisplayMainStat from "./DisplayMainStat";
 
-function ArtifactStats(props, index) {
+function ArtifactStats(props) {
   const { data } = props;
-  console.log();
   const mainStat = stats[data.reliquaryMainstat.mainPropId];
   const subStats =  data.reliquarySubstats.map((val, index) => {
     if(!val.appendPropId) return <></>

@@ -23,7 +23,13 @@ function FetchingData() {
       .then((formattedData) => setData(formattedData))
       .catch((error) => console.error(error));
   };
-  useEffect(fetchDataFromAPI, [uid]);
+
+  useEffect(() => {
+    const timeout = setTimeout(fetchDataFromAPI, 3000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [uid]);
 
   if (!data)
     return (

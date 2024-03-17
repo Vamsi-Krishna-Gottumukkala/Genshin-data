@@ -6,7 +6,6 @@ function ArtifactList(props) {
     if(index === 5) return null
     return <Artifact imgPath = {val.flat.icon} data = {val.flat} key={val.itemId}/>
   })
-  console.log(props.data[props.index].equipList);
   return (
     <div
       style={{
