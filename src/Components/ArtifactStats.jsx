@@ -1,25 +1,46 @@
 import React from "react";
 import stats from "../data/stats.json";
-import DisplayMainStat from "./DisplayMainStat";
+import useHover from "../Hooks/useHover";
 
 function ArtifactStats(props) {
   const { data } = props;
-  const mainStat = stats[data.reliquaryMainstat.mainPropId];
-  const subStats =  data.reliquarySubstats.map((val, index) => {
-    if(!val.appendPropId) return <></>
-    if(index % 2 === 1) return <>{stats[val.appendPropId]} - {val.statValue} <br/></>
-    return <>{stats[val.appendPropId]} - {val.statValue } , </>
-  })
+  const [hover, mouseOver, mouseNotOver] = useHover();
+  const subStats = data.reliquarySubstats.map((val) => {
+    if (!val.appendPropId) return <></>;
+    return (
+      <div
+        style={{
+          fontSize: "large",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width:'80px'
+        }}
+      >
+        <div>{stats[val.appendPropId]}</div>
+        <div>{val.statValue}</div>
+      </div>
+    );
+  });
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-      <DisplayMainStat
-        mainStat={mainStat}
-        statValue={data.reliquaryMainstat.statValue}
-      />
-      <div style={{ position: "fixed", left: "1150px" }}>
-        {subStats}
-      </div>
+    <div
+      onMouseEnter={mouseOver}
+      onMouseLeave={mouseNotOver}
+      style={{
+        backgroundColor: hover
+          ? "rgba(0,248,255,0.5"
+          : "rgba(240, 248, 255, 0.2)",
+        justifyContent: "space-around",
+        borderRadius: "130px",
+        height: "80px",
+        display: "flex",
+        flexWrap: "wrap",
+        alignContent: "center",
+        width: "400px",
+      }}
+    >
+      {subStats}
     </div>
   );
 }

@@ -9,8 +9,8 @@ function ArtifactList(props) {
   return (
     <div
       style={{
-        position: "fixed",
-        left: "820px",
+        position: "relative",
+        left: "40px",
         height: "400px",
         width: "600px",
       }}

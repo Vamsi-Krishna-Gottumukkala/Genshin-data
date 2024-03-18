@@ -1,13 +1,26 @@
 import React from "react";
 import useProfilePictures from "../Hooks/useProfilePictures";
+import useHover from "../Hooks/useHover";
 
 function Navbar(props) {
   const data = props.data;
   const [img] = useProfilePictures({ data });
+  const [hover, mouseOver, mouseNotOver] = useHover();
+  const [hover2, mouseOver2, mouseNotOver2] = useHover();
+
   return (
     <div className="nav">
-      <div className="imageBox">
-        <div>
+      <div
+        className="imageBox"
+        onMouseEnter={mouseOver2}
+        onMouseLeave={mouseNotOver2}
+        style={{
+          backgroundColor: hover2 ? 'rgba(0, 248, 255, 0.5)'  : "rgba(240, 248, 255, 0.2)",
+          justifyContent:'center',
+          width:'280px'
+        }}
+      >
+        <div style={{display:'flex', alignItems:'center'}}>
           <img src={img} alt="pp" width="100px" height="100px"></img>
         </div>
         <div>
@@ -20,9 +33,24 @@ function Navbar(props) {
           {data.signature}
         </div>
       </div>
-      <div>
-        <h3>Total Achievements : {data.finishAchievementNum}</h3>
-        <h3>
+      <div
+        onMouseEnter={mouseOver}
+        onMouseLeave={mouseNotOver}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flexWrap: "wrap",
+          alignItems: "center",
+          padding: "10px",
+          backgroundColor: hover ? 'rgba(0, 248, 255, 0.5)' : "rgba(240, 248, 255, 0.2)",
+          borderRadius: "30px",
+          justifyContent: "center",
+        }}
+      >
+        <h3 style={{ padding: "0px", margin: "0px" }}>
+          Total Achievements : {data.finishAchievementNum}
+        </h3>
+        <h3 style={{ margin: "8px" }}>
           Spiral Abyss : {data.towerFloorIndex}-{data.towerLevelIndex}
         </h3>
       </div>
@@ -33,7 +61,12 @@ function Navbar(props) {
           flexWrap: "wrap",
         }}
       >
-        <input type="text" value={props.uid} onChange={props.onChangingId} />
+        <input
+          type="text"
+          value={props.uid}
+          onChange={props.onChangingId}
+          style={{ backgroundColor: "rgba(240, 248, 255, 0.2)", height:'30px', borderRadius:'30px', fontSize:'15px'}}
+        />
       </div>
     </div>
   );

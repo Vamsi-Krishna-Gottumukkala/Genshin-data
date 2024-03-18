@@ -6,12 +6,12 @@ import SplashArt from "./SplashArt";
 function DisplayCard(props) {
   const { data, avatars, index } = props;
   return (
+    <div style={{width:'100vw', display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
     <div
       className="displayCard"
       style={{
-        background: "url('https://enka.network/ui/UI_NameCardPic_0_P.png')",
-        backgroundRepeat: " no-repeat",
-        backgroundSize: "cover",
+        backgroundColor:'rgba(240, 248, 255, 0.2)',
+        borderRadius:'30px'
       }}
     >
       <SplashArt data={data} index={index} />
@@ -27,6 +27,7 @@ function DisplayCard(props) {
         <Weapon data={avatars} index={index} />
       </div>
       <ArtifactList data={avatars} index={index} />
+    </div>
     </div>
   );
 }
