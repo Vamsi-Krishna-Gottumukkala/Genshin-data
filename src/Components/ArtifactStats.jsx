@@ -5,7 +5,7 @@ import useHover from "../Hooks/useHover";
 function ArtifactStats(props) {
   const { data } = props;
   const [hover, mouseOver, mouseNotOver] = useHover();
-  const subStats = data.reliquarySubstats.map((val) => {
+  const subStats = data.reliquarySubstats.map((val, index) => {
     if (!val.appendPropId) return <></>;
     return (
       <div
@@ -16,6 +16,7 @@ function ArtifactStats(props) {
           alignItems: "center",
           width:'80px'
         }}
+        key={index}
       >
         <div>{stats[val.appendPropId]}</div>
         <div>{val.statValue}</div>

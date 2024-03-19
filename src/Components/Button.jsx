@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import characters from "../data/characters.json";
 
 function Button(props) {
-  useEffect(() => setData(characters), []);
 
-  const [data, setData] = useState();
   const [hovered, setHovered] = useState();
   const characterDetails = props.characterId.avatarId.toString();
-  if (!data)
+  if (!characters)
     return (
       <>
         <h1>Loading</h1>
       </>
     );
-  const image = data[characterDetails].SideIconName;
+  const image = characters[characterDetails].SideIconName;
   return (
     <button
       className="characters"
