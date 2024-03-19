@@ -16,6 +16,7 @@ function Weapon(props) {
   const stringVal = data[index].equipList[5].flat.nameTextMapHash.toString();
   const name = weapons[stringVal];
   const [hover, mouseOver, mouseNotOver] = useHover();
+  const [hover2, mouseOver2, mouseNotOver2] = useHover();
 
   return (
     <div
@@ -33,12 +34,40 @@ function Weapon(props) {
         borderRadius: "130px",
       }}
     >
-      <img
-        src={`https://enka.network/ui/${data[index].equipList[5].flat.icon}.png`}
-        alt="weapon"
-        width="150px"
-        height="150px"
-      />
+      <div
+        onMouseEnter={mouseOver2}
+        onMouseLeave={mouseNotOver2}
+        style={{
+          width: "150px",
+          height: "150px",
+          display: "flex",
+          flexWrap: "wrap",
+          alignContent: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src={`https://enka.network/ui/${data[index].equipList[5].flat.icon}.png`}
+          alt="weapon"
+          width="150px"
+          height="150px"
+        />
+        {hover && (
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              flexWrap: "wrap",
+              color: "white",
+              backgroundColor: "black",
+              borderRadius: "30px",
+              top: "274px",
+            }}
+          >
+            {data[index].equipList[5].weapon.level}
+          </div>
+        )}
+      </div>
       {name}
       <br></br>
       {baseStat} : {data[index].equipList[5].flat.weaponStats[0].statValue}

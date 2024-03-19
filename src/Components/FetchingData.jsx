@@ -20,7 +20,9 @@ function FetchingData() {
         if (!data.ok) throw new Error("Failed to fetch");
         return data.json();
       })
-      .then((formattedData) => setData(formattedData))
+      .then((formattedData) => {
+        setData(formattedData);
+      })
       .catch((error) => console.error(error));
   };
 
@@ -30,7 +32,6 @@ function FetchingData() {
       clearTimeout(timeout);
     };
   }, [uid]);
-
   if (!data)
     return (
       <>
@@ -41,6 +42,7 @@ function FetchingData() {
     <>
       <Navbar uid={uid} onChangingId={onChangingId} data={data.playerInfo} />
       <CharacterList
+        level={data.playerInfo}
         data={data.avatarInfoList}
         index={index}
         setIndex={setIndex}

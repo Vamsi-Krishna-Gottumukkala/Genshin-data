@@ -6,7 +6,7 @@ function Button(props) {
 
   const [data, setData] = useState();
   const [hovered, setHovered] = useState();
-  const characterDetails = props.characterId.toString();
+  const characterDetails = props.characterId.avatarId.toString();
   if (!data)
     return (
       <>
@@ -28,12 +28,29 @@ function Button(props) {
         cursor: "pointer"
       }}
     >
+      <div style={{height:'60px', width:'60px', display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
       <img
         src={`https://enka.network/ui/${image}.png`}
         alt="sideicon"
         height="60px"
         width="60px"
       />
+      {hovered && (
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              flexWrap: "wrap",
+              color: "white",
+              backgroundColor: "black",
+              borderRadius: "30px",
+              top: "174px",
+            }}
+          >
+            {props.level.showAvatarInfoList[props.index].level}
+          </div>
+        )}
+        </div>
     </button>
   );
 }

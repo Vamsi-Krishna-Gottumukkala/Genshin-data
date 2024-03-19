@@ -4,7 +4,7 @@ import Artifact from "./Artifact";
 function ArtifactList(props) {
   const artifactData = props.data[props.index].equipList.map((val, index) => {
     if(index === 5) return null
-    return <Artifact imgPath = {val.flat.icon} data = {val.flat} key={val.itemId}/>
+    return <Artifact imgPath = {val.flat.icon} data = {val} key={val.itemId}/>
   })
   return (
     <div
