@@ -15,12 +15,14 @@ function Navbar(props) {
         onMouseEnter={mouseOver2}
         onMouseLeave={mouseNotOver2}
         style={{
-          backgroundColor: hover2 ? 'rgba(0, 248, 255, 0.5)'  : "rgba(240, 248, 255, 0.2)",
-          justifyContent:'center',
-          width:'280px'
+          backgroundColor: hover2
+            ? "rgba(0, 248, 255, 0.5)"
+            : "rgba(240, 248, 255, 0.2)",
+          justifyContent: "center",
+          width: "280px",
         }}
       >
-        <div style={{display:'flex', alignItems:'center'}}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <img src={img} alt="pp" width="100px" height="100px"></img>
         </div>
         <div>
@@ -42,7 +44,9 @@ function Navbar(props) {
           flexWrap: "wrap",
           alignItems: "center",
           padding: "10px",
-          backgroundColor: hover ? 'rgba(0, 248, 255, 0.5)' : "rgba(240, 248, 255, 0.2)",
+          backgroundColor: hover
+            ? "rgba(0, 248, 255, 0.5)"
+            : "rgba(240, 248, 255, 0.2)",
           borderRadius: "30px",
           justifyContent: "center",
         }}
@@ -65,7 +69,12 @@ function Navbar(props) {
           type="text"
           value={props.uid}
           onChange={props.onChangingId}
-          style={{ backgroundColor: "rgba(240, 248, 255, 0.2)", height:'30px', borderRadius:'30px', fontSize:'15px'}}
+          style={{
+            backgroundColor: "rgba(240, 248, 255, 0.2)",
+            height: "30px",
+            borderRadius: "30px",
+            fontSize: "15px",
+          }}
         />
       </div>
     </div>

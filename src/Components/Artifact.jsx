@@ -55,7 +55,7 @@ function Artifact(props) {
                 top: "54px",
               }}
             >
-              {data.reliquary.level-1}
+              {data.reliquary.level - 1}
             </div>
           )}
         </div>

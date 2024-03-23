@@ -14,7 +14,7 @@ function ArtifactStats(props) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width:'80px'
+          width: "80px",
         }}
         key={index}
       >

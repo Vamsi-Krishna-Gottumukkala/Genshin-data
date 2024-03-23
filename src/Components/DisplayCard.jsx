@@ -6,28 +6,38 @@ import SplashArt from "./SplashArt";
 function DisplayCard(props) {
   const { data, avatars, index } = props;
   return (
-    <div style={{width:'100vw', display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
     <div
-      className="displayCard"
       style={{
-        backgroundColor:'rgba(240, 248, 255, 0.2)',
-        borderRadius:'30px'
+        width: "100vw",
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
       }}
     >
-      <SplashArt data={data} index={index} />
       <div
+        className="displayCard"
         style={{
-          position: "relative",
-          left: "20px ",
-          display: "flex",
-          flexWrap: "wrap",
-          alignContent: "center",
+          backgroundColor: "rgba(240, 248, 255, 0.2)",
+          borderRadius: "30px",
         }}
       >
-        <Weapon data={avatars} index={index} />
+        <SplashArt data={data} index={index} />
+        <div
+          style={{
+            position: "relative",
+            left: "20px ",
+            display: "flex",
+            flexWrap: "wrap",
+            alignContent: "center",
+            justifyContent: "center",
+            gap: "20px",
+            width: "380px",
+          }}
+        >
+          <Weapon data={avatars} index={index} avatars={data} />
+        </div>
+        <ArtifactList data={avatars} index={index} />
       </div>
-      <ArtifactList data={avatars} index={index} />
-    </div>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import characters from "../data/characters.json";
 
 function Button(props) {
-
   const [hovered, setHovered] = useState();
   const characterDetails = props.characterId.avatarId.toString();
   if (!characters)
@@ -16,24 +15,34 @@ function Button(props) {
     <button
       className="characters"
       onClick={props.onButtonClick}
-      onMouseEnter={()=>setHovered(true)}
-      onMouseLeave={()=>setHovered(false)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={{
         padding: "0px",
         margin: "0px",
-        backgroundColor: hovered ? 'rgba(0, 248, 255, 0.5)' : 'rgba(240, 248, 255, 0.2)',
+        backgroundColor: hovered
+          ? "rgba(0, 248, 255, 0.5)"
+          : "rgba(240, 248, 255, 0.2)",
         border: "none",
-        cursor: "pointer"
+        cursor: "pointer",
       }}
     >
-      <div style={{height:'60px', width:'60px', display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
-      <img
-        src={`https://enka.network/ui/${image}.png`}
-        alt="sideicon"
-        height="60px"
-        width="60px"
-      />
-      {hovered && (
+      <div
+        style={{
+          height: "60px",
+          width: "60px",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src={`https://enka.network/ui/${image}.png`}
+          alt="sideicon"
+          height="60px"
+          width="60px"
+        />
+        {hovered && (
           <div
             style={{
               display: "flex",
@@ -48,7 +57,7 @@ function Button(props) {
             {props.level.showAvatarInfoList[props.index].level}
           </div>
         )}
-        </div>
+      </div>
     </button>
   );
 }
