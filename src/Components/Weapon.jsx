@@ -10,7 +10,7 @@ function Weapon(props) {
   useEffect(() => setWeapons(weapons), [weapons]);
   const [stat, setStat] = useState(stats);
   useEffect(() => setStat(stat), [stat]);
-  const { data, index, avatars } = props;
+  const { data, index, avatars, displayLevel } = props;
   const baseStat =
     stats[data[index].equipList[5].flat.weaponStats[0].appendPropId];
   const specialStat =
@@ -18,7 +18,6 @@ function Weapon(props) {
   const stringVal = data[index].equipList[5].flat.nameTextMapHash.toString();
   const name = weapons[stringVal];
   const [hover, mouseOver, mouseNotOver] = useHover();
-  const [hover2, mouseOver2, mouseNotOver2] = useHover();
 
   const skills = character[
     avatars.showAvatarInfoList[index].avatarId
@@ -29,7 +28,13 @@ function Weapon(props) {
       ];
     const level = data[index].skillLevelMap[val.toString()];
     return (
-      <Talents talentImageSource={talentImageSource} val={val} level={level} />
+      <Talents
+        talentImageSource={talentImageSource}
+        val={val}
+        level={level}
+        key={talentImageSource}
+        displayLevel={displayLevel[3]}
+      />
     );
   });
 
@@ -51,8 +56,6 @@ function Weapon(props) {
         }}
       >
         <div
-          onMouseEnter={mouseOver2}
-          onMouseLeave={mouseNotOver2}
           style={{
             width: "150px",
             height: "150px",
@@ -68,7 +71,7 @@ function Weapon(props) {
             width="150px"
             height="150px"
           />
-          {hover && (
+          {(!displayLevel[2] || hover) && (
             <div
               style={{
                 display: "flex",

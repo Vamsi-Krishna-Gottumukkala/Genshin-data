@@ -42,7 +42,7 @@ function Button(props) {
           height="60px"
           width="60px"
         />
-        {hovered && (
+        {(!props.displayLevels || hovered) && (
           <div
             style={{
               display: "flex",

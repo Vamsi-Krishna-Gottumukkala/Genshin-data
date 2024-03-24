@@ -7,9 +7,9 @@ import stats from "../data/stats.json";
 function Artifact(props) {
   const image = props.imgPath;
   const data = props.data;
+  const displayLevel = props.displayLevel;
   const mainStat = stats[data.flat.reliquaryMainstat.mainPropId];
   const [hover, mouseOver, mouseNotOver] = useHover();
-  const [hover2, mouseOver2, mouseNotOver2] = useHover();
   return (
     <div style={{ display: "flex", gap: "20px", margin: "7px 0px" }}>
       <div
@@ -26,8 +26,6 @@ function Artifact(props) {
         }}
       >
         <div
-          onMouseEnter={mouseOver2}
-          onMouseLeave={mouseNotOver2}
           style={{
             width: "80px",
             height: "80px",
@@ -43,7 +41,7 @@ function Artifact(props) {
             width="80px"
             height="80px"
           />
-          {hover && (
+          {(!displayLevel || hover) && (
             <div
               style={{
                 display: "flex",

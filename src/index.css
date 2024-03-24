@@ -4,18 +4,20 @@ body {
   font-size: 1.3em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 #root {
   background: url(https://i.pinimg.com/originals/c4/19/7d/c4197d1cf950efbd2f69b477aa5354d0.jpg);
   /* background: url(https://livewallp.com/wp-content/uploads/2021/08/Genshin-Impact-Traveler-Aether.jpg); */
+  /* background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnEEgCko5gAX1pRltF4RsYkJEkXpmw_Mxs3nvhAXViSfk9ds5SbI_W0huNmXskVvYRXFLhDb4Y9QkyhLN_Fq0K1FL3MpMrrCE_Sb3d5KQoNbTjy2Iweo7NSb34PQ93o-9TIA2M4CXaLiPw/w7680-h3200-c/genshin-impact-uhdpaper.com-4K-1.jpg'); */
+  /* background: url(https://staticg.sportskeeda.com/editor/2022/07/50e0e-16572903750942-1920.jpg); */
+  /* background: url(https://images.wallpapersden.com/image/download/genshin-impact-2019_a2prbGyUmZqaraWkpJRmbmdlrWZlbWU.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
   height: 100vh;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 .imageBox {

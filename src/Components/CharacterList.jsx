@@ -10,6 +10,7 @@ function CharacterList(props) {
         index={props.index}
         level={props.level}
         onButtonClick={() => props.setIndex(index)}
+        displayLevels={props.displayLevels}
       />
     );
   });

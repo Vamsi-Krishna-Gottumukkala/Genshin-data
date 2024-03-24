@@ -3,7 +3,7 @@ import useHover from "../Hooks/useHover";
 
 function Talents(props) {
   const [hover, mouseOver, mouseNotOver] = useHover();
-  const { talentImageSource, val, level } = props;
+  const { talentImageSource, val, level, displayLevel } = props;
   return (
     <div
       onMouseEnter={mouseOver}
@@ -28,14 +28,18 @@ function Talents(props) {
         width="50px"
         height="50px"
       />
-      {hover && (
+      {(!displayLevel || hover) && (
         <div
           style={{
             position: "absolute",
             top: "348px",
             backgroundColor: "black",
             color: "white",
-            borderRadius: "30px",
+            borderRadius: "300px",
+            width: "20.8px",
+            height: "24px",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
           {level}

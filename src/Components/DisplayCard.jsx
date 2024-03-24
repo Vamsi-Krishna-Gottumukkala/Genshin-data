@@ -4,7 +4,7 @@ import ArtifactList from "./ArtifactList";
 import SplashArt from "./SplashArt";
 
 function DisplayCard(props) {
-  const { data, avatars, index } = props;
+  const { data, avatars, index, displayLevels } = props;
   return (
     <div
       style={{
@@ -34,9 +34,18 @@ function DisplayCard(props) {
             width: "380px",
           }}
         >
-          <Weapon data={avatars} index={index} avatars={data} />
+          <Weapon
+            data={avatars}
+            index={index}
+            avatars={data}
+            displayLevel={displayLevels}
+          />
         </div>
-        <ArtifactList data={avatars} index={index} />
+        <ArtifactList
+          data={avatars}
+          index={index}
+          displayLevel={displayLevels[0]}
+        />
       </div>
     </div>
   );

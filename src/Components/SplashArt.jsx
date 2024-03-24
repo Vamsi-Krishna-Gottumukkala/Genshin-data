@@ -12,7 +12,7 @@ function SplashArt(props) {
   return (
     <div
       style={{
-        zIndex: "1",
+        zIndex: "0",
         height: "400px",
         width: "400px",
         display: "flex",

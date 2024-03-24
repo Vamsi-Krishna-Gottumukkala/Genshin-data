@@ -4,7 +4,8 @@ import CharacterList from "./CharacterList";
 import DisplayCard from "./DisplayCard";
 import useIndex from "../Hooks/useIndex";
 
-function FetchingData() {
+function FetchingData(props) {
+  const checkedItems = props.checkedItems;
   const [uid, setUid] = useState("814201215");
   const onChangingId = (e) => {
     setUid(e.target.value);
@@ -46,11 +47,13 @@ function FetchingData() {
         data={data.avatarInfoList}
         index={index}
         setIndex={setIndex}
+        displayLevels={checkedItems[1]}
       />
       <DisplayCard
         data={data.playerInfo}
         avatars={data.avatarInfoList}
         index={index}
+        displayLevels={checkedItems}
       />
     </>
   );
