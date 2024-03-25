@@ -25,6 +25,7 @@ function Button(props) {
           : "rgba(240, 248, 255, 0.2)",
         border: "none",
         cursor: "pointer",
+        borderRadius: "10px",
       }}
     >
       <div
@@ -51,7 +52,7 @@ function Button(props) {
               color: "white",
               backgroundColor: "black",
               borderRadius: "30px",
-              top: "174px",
+              top: "194px",
             }}
           >
             {props.level.showAvatarInfoList[props.index].level}
