@@ -20,11 +20,12 @@ function Navbar(props) {
               ? "rgba(0, 248, 255, 0.5)"
               : "rgba(240, 248, 255, 0.2)",
             justifyContent: "center",
-            width: "280px",
+            alignItems: "center",
+            width: "300px",
           }}
         >
           <div style={{ display: "flex", alignItems: "center" }}>
-            <img src={img} alt="pp" width="100px" height="100px"></img>
+            <img src={img} alt="pp" width="100px" height="120px"></img>
           </div>
           <div>
             {data.nickname}
@@ -50,6 +51,7 @@ function Navbar(props) {
               : "rgba(240, 248, 255, 0.2)",
             borderRadius: "30px",
             justifyContent: "center",
+            width:"300px"
           }}
         >
           <h3 style={{ padding: "0px", margin: "0px" }}>
