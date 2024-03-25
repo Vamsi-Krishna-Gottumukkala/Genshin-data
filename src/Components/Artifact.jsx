@@ -41,7 +41,7 @@ function Artifact(props) {
             width="80px"
             height="80px"
           />
-          {(!displayLevel || hover) && (
+          {(!displayLevel[0] || hover) && (
             <div
               style={{
                 display: "flex",
@@ -62,7 +62,7 @@ function Artifact(props) {
           statValue={data.flat.reliquaryMainstat.statValue}
         />
       </div>
-      <ArtifactStats data={data.flat} />
+      <ArtifactStats data={data.flat} displayLevel={displayLevel}/>
     </div>
   );
 }

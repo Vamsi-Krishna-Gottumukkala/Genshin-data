@@ -2,10 +2,11 @@ import { useState } from "react";
 
 function useCheckBox() {
   const message = [
-    "Display Artifact Levels only while hovering",
-    "Display Character Level only while hovering",
-    "Display Weapon Level only while hovering",
-    "Display Talent level only while hovering",
+    "Display Artifact Levels only when hovering",
+    "Display Character Level only when hovering",
+    "Display Weapon Level only when hovering",
+    "Display Talent level only when hovering",
+    "Show all substats of artifacts only when hovering"
   ];
   const [checkedItems, setCheckedItems] = useState(message.map(() => true));
 
