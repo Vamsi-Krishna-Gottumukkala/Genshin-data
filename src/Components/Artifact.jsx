@@ -19,7 +19,7 @@ function Artifact(props) {
           display: "flex",
           width: "200px",
           position: "relative",
-          borderRadius: "130px",
+          borderRadius: "30px",
           backgroundColor: hover
             ? "rgba(0,248,255,0.5"
             : "rgba(240, 248, 255, 0.2)",
