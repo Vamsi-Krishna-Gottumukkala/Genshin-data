@@ -52,7 +52,7 @@ function Weapon(props) {
             : "rgba(240, 248, 255, 0.2)",
           width: "360px",
           height: "200px",
-          borderRadius: "130px",
+          borderRadius: "65px",
         }}
       >
         <div

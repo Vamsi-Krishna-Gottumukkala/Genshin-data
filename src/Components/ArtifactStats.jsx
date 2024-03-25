@@ -33,7 +33,7 @@ function ArtifactStats(props) {
           ? "rgba(0,248,255,0.5"
           : "rgba(240, 248, 255, 0.2)",
         justifyContent: "space-around",
-        borderRadius: "130px",
+        borderRadius: "30px",
         height: "80px",
         display: "flex",
         flexWrap: "wrap",
