@@ -3,7 +3,7 @@ import stats from "../data/stats.json";
 import useHover from "../Hooks/useHover";
 
 function ArtifactStats(props) {
-  const { data } = props;
+  const { data, displayLevel} = props;
   const [hover, mouseOver, mouseNotOver] = useHover();
   const subStats = data.reliquarySubstats.map((val, index) => {
     if (!val.appendPropId) return <></>;
@@ -15,6 +15,7 @@ function ArtifactStats(props) {
           flexDirection: "column",
           alignItems: "center",
           width: "80px",
+          flexShrink:0
         }}
         key={index}
       >
@@ -32,13 +33,16 @@ function ArtifactStats(props) {
         backgroundColor: hover
           ? "rgba(0,248,255,0.5"
           : "rgba(240, 248, 255, 0.2)",
-        justifyContent: "space-around",
         borderRadius: "30px",
         height: "80px",
         display: "flex",
-        flexWrap: "wrap",
-        alignContent: "center",
-        width: "400px",
+        flexWrap: "nowrap",
+        width: !displayLevel[4] ? '380px' : hover ? "380px" : "280px",
+        transition: "width 1s",
+        gap: "16px",
+        paddingLeft: "16px",
+        alignItems:'center',
+        overflow:'hidden'
       }}
     >
       {subStats}

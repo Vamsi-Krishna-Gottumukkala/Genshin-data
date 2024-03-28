@@ -44,7 +44,7 @@ function DisplayCard(props) {
         <ArtifactList
           data={avatars}
           index={index}
-          displayLevel={displayLevels[0]}
+          displayLevel={displayLevels}
         />
       </div>
     </div>

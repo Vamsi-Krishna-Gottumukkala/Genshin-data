@@ -19,7 +19,7 @@ function ArtifactList(props) {
         position: "relative",
         left: "40px",
         height: "400px",
-        width: "600px",
+        width: "640px",
       }}
     >
       {artifactData}

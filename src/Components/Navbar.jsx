@@ -25,7 +25,7 @@ function Navbar(props) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center" }}>
-            <img src={img} alt="pp" width="100px" height="120px"></img>
+            <img src={img} alt="pp" width="100px" height="100px"></img>
           </div>
           <div>
             {data.nickname}
