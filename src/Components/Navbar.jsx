@@ -17,7 +17,7 @@ function Navbar(props) {
           onMouseLeave={mouseNotOver2}
           style={{
             backgroundColor: hover2
-              ? "rgba(0, 248, 255, 0.5)"
+              ? "rgb(205, 250, 219, 0.6)"
               : "rgba(240, 248, 255, 0.2)",
             justifyContent: "center",
             alignItems: "center",
@@ -47,7 +47,7 @@ function Navbar(props) {
             alignItems: "center",
             padding: "10px",
             backgroundColor: hover
-              ? "rgba(0, 248, 255, 0.5)"
+              ? "rgb(205, 250, 219, 0.6)"
               : "rgba(240, 248, 255, 0.2)",
             borderRadius: "30px",
             justifyContent: "center",
